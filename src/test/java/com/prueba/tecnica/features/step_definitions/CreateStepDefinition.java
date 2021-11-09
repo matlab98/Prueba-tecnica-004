@@ -1,21 +1,15 @@
 package com.prueba.tecnica.features.step_definitions;
 
-import com.prueba.tecnica.model.busqueda.BuscarVuelos;
-import com.prueba.tecnica.model.busqueda.FechaDeSalida;
 import com.prueba.tecnica.tasks.*;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.When;
 import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 
-import java.util.List;
-
 import static com.prueba.tecnica.user_interface.Opcion.Inicio;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
-import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 
 public class CreateStepDefinition {
