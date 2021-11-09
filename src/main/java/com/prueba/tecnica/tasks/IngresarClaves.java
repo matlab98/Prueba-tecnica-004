@@ -23,10 +23,12 @@ public class IngresarClaves implements Task {
         actor.attemptsTo(Click.on(RegisterUI.BOTON_SIGUIENTE_3));
         actor.attemptsTo(Enter.theValue(pass).into(RegisterUI.CLAVE));
         actor.attemptsTo(Enter.theValue(pass).into(RegisterUI.CLAVE_VALIDAR));
+        actor.attemptsTo(Click.on(RegisterUI.OK_CONSENT));
+        actor.attemptsTo(Click.on(RegisterUI.OK_CONSENT));
         actor.attemptsTo(Click.on(RegisterUI.BOTON_FINAL));
     }
 
     public static Performable registerUser (String clave) {
-        return instrumented(IngresarInformacionGeoreferencia.class, clave);
+        return instrumented(IngresarClaves.class, clave);
     }
 }

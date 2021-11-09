@@ -36,22 +36,22 @@ public class CreateStepDefinition {
 
     @When("^se diligencia los datos basicos (.+), (.+), (.+) y (.+)$")
     public void se_diligencia_los_datos_basicos_y(String nombre, String apellido, String fechadenacimiento, String correo) throws Throwable {
-    theActorCalled("Hilder").attemptsTo(IngresarInformacionBasica.registerUser(nombre, apellido, correo, fechadenacimiento.substring(0,2), fechadenacimiento.substring(2,4), fechadenacimiento.substring(4) ));
+        theActorCalled("Hilder").attemptsTo(IngresarInformacionBasica.registerUser(nombre, apellido, correo, fechadenacimiento.substring(0, 2), fechadenacimiento.substring(2, 4), fechadenacimiento.substring(4)));
     }
 
     @And("^se diligencia la georeferencia (.+), (.+) y (.+)$")
     public void se_diligencia_la_georeferencia(String ciudad, String pais, String codigo) throws Throwable {
-theActorCalled("Hilder").attemptsTo(IngresarInformacionGeoreferencia.registerUser(ciudad, codigo, pais));
+        theActorCalled("Hilder").attemptsTo(IngresarInformacionGeoreferencia.registerUser(ciudad, codigo, pais));
     }
 
     @And("^se diligencia los datos de dispositivos (.+), (.+), (.+), (.+), (.+) y (.+)$")
     public void se_diligencia_la_georeferencia(String movil, String modeloMovil, String osMovil, String computadorOs, String versionPc, String lenguajePc) throws Throwable {
-theActorCalled("Hilder").attemptsTo(IngresarInformacionDispositivo.registerUser(movil, modeloMovil, osMovil, computadorOs, versionPc, lenguajePc));
+        theActorCalled("Hilder").attemptsTo(IngresarInformacionDispositivo.registerUser(movil, modeloMovil, osMovil, computadorOs, versionPc, lenguajePc));
     }
 
-    @And("^se diligencia clave (.+)$")
+    @And("^se crea usuario (.+)$")
     public void se_diligencia_clave(String clave) throws Throwable {
-theActorCalled("Hilder").attemptsTo(IngresarClaves.registerUser(clave));
+        theActorCalled("Hilder").attemptsTo(IngresarClaves.registerUser(clave));
     }
 
 
