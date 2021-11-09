@@ -44,7 +44,7 @@ public class RegisterUI {
             .locatedBy("//div/a[@class='btn btn-blue pull-right']");
 
     public static final Target ELEGIR_BRAND = Target.the("Select Brand")
-            .locatedBy("//div/div[@placeholder='Select Brand']");
+            .locatedBy("//div[@name='handsetMakerId']");
 
     public static final Target MODEL = Target.the("Select a Model")
             .locatedBy("//div/div[@placeholder='Select a Model']");

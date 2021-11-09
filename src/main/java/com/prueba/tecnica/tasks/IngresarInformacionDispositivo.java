@@ -11,6 +11,7 @@ import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
 import net.serenitybdd.screenplay.targets.Target;
 
+import static java.lang.Thread.sleep;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 import java.time.LocalDate;
@@ -31,12 +32,18 @@ public class IngresarInformacionDispositivo implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(Click.on(RegisterUI.BOTON_SIGUIENTE_2));
-        actor.attemptsTo(SelectFromOptions.byVisibleText(movil).from(RegisterUI.FECHA_DIA));
-        actor.attemptsTo(SelectFromOptions.byVisibleText(modeloMovil).from(RegisterUI.FECHA_DIA));
-        actor.attemptsTo(SelectFromOptions.byVisibleText(osMovil).from(RegisterUI.FECHA_DIA));
-        actor.attemptsTo(SelectFromOptions.byVisibleText(computadorOs ).from(RegisterUI.FECHA_DIA));
-        actor.attemptsTo(SelectFromOptions.byVisibleText(versionPc).from(RegisterUI.FECHA_DIA));
-        actor.attemptsTo(SelectFromOptions.byVisibleText(lenguajePc).from(RegisterUI.FECHA_ANIO));
+        actor.attemptsTo(Click.on(RegisterUI.ELEGIR_BRAND));
+        try {
+            sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        actor.attemptsTo(SelectFromOptions.byVisibleText(movil).from(RegisterUI.ELEGIR_BRAND));
+        actor.attemptsTo(SelectFromOptions.byVisibleText(modeloMovil).from(RegisterUI.MODEL));
+        actor.attemptsTo(SelectFromOptions.byVisibleText(osMovil).from(RegisterUI.ELEGIR_OS));
+        actor.attemptsTo(SelectFromOptions.byVisibleText(computadorOs ).from(RegisterUI.OS_LENGUAJE));
+        actor.attemptsTo(SelectFromOptions.byVisibleText(versionPc).from(RegisterUI.VERSION));
+        actor.attemptsTo(SelectFromOptions.byVisibleText(lenguajePc).from(RegisterUI.VERSION));
     }
 
     public static Performable registerUser (String movil, String modeloMovil, String osMovil, String computadorOs, String versionPc, String lenguajePc) {
