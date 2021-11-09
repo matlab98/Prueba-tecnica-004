@@ -28,64 +28,50 @@ public class RegisterUI {
     public static final Target FECHA_DIA = Target.the("Day")
             .locatedBy("#birthDay");
 
-    public static final Target BOTON_CALENDARIO_SALIDA = Target.the("el botón para seleccionar la fecha de salida")
-            .locatedBy("//*[@id='vuelos']/form/div[3]/div[4]/div[1]/div[1]/div/div/span/button");
+    public static final Target BOTON_SIGUIENTE_1 = Target.the("Next")
+            .locatedBy("//div/a[@class='btn btn-blue']");
 
-    public static final Target FECHA_DE_SALIDA = Target.the("la fecha de salida")
-            .locatedBy("//td[contains(@data-month, '{0}')]//a[.='{1}']");
+    public static final Target CIUDAD = Target.the("City")
+            .locatedBy("//input[@id='city']");
 
-    public static final Target BOTON_CONSULTA = Target.the("el botón de consulta de vuelos")
-            .locatedBy("//input[@value='Buscar vuelos']");
+    public static final Target ZIP = Target.the("Zip")
+            .locatedBy("//input[@id='zip']");
 
+    public static final Target PAIS = Target.the("Country")
+            .locatedBy("//div[@name='countryId']");
 
+    public static final Target BOTON_SIGUIENTE_2 = Target.the("Next")
+            .locatedBy("//div/a[@class='btn btn-blue pull-right']");
 
+    public static final Target ELEGIR_BRAND = Target.the("Select Brand")
+            .locatedBy("//div/div[@placeholder='Select Brand']");
 
+    public static final Target MODEL = Target.the("Select a Model")
+            .locatedBy("//div/div[@placeholder='Select a Model']");
 
+    public static final Target ELEGIR_OS = Target.the("Select OS")
+            .locatedBy("//div/div[@placeholder='Select OS']");
 
-    @FindBy(how = How.XPATH, using = "//div/a[@class='btn btn-blue']")
-    private WebElement btnNext1;
+    public static final Target VERSION = Target.the("Select a Version")
+            .locatedBy("//div/div[@placeholder='Select a Version']");
 
-    @FindBy(how = How.XPATH, using = "//input[@id='city']")
-    private WebElement txtCity;
+    public static final Target OS_LENGUAJE = Target.the("Select OS language")
+            .locatedBy("//div/div[@placeholder='Select OS language']");
 
-    @FindBy(how = How.XPATH, using = "//input[@id='zip']")
-    private WebElement txtCode;
+    public static final Target BOTON_SIGUIENTE_3 = Target.the("Next")
+            .locatedBy("//div/a[@aria-label='Next - final step']");
 
-    @FindBy(how = How.XPATH, using = "//div[@name='countryId']")
-    private WebElement txtCountry;
+    public static final Target CLAVE = Target.the("Password")
+            .locatedBy("//input[@name='password']");
 
-    @FindBy(how = How.XPATH, using = "//div/a[@class='btn btn-blue pull-right']")
-    private WebElement btnNext2;
+    public static final Target CLAVE_VALIDAR = Target.the("Confirm assword")
+            .locatedBy("//input[@name='confirmPassword']");
 
-    @FindBy(how = How.XPATH, using = "//div/div[@placeholder='Select Brand']")
-    private WebElement txtBrand;
+    public static final Target OK_CONSENT = Target.the("checkmark signup-consent__checkbox error")
+            .locatedBy("//span[@class='checkmark signup-consent__checkbox error']");
 
-    @FindBy(how = How.XPATH, using = "//div/div[@placeholder='Select a Model']")
-    private WebElement txtModel;
-
-    @FindBy(how = How.XPATH, using = "//div/div[@placeholder='Select OS']")
-    private WebElement txtOs;
-
-    @FindBy(how = How.XPATH, using = "//div/div[@placeholder='Select a Version']")
-    private WebElement txtVersion;
-
-    @FindBy(how = How.XPATH, using = "//div/div[@placeholder='Select OS language']")
-    private WebElement btnOsLanguage;
-
-    @FindBy(how = How.XPATH, using = "//div/a[@aria-label='Next - final step']")
-    private WebElement btnNext3;
-
-    @FindBy(how = How.XPATH, using = "//input[@name='password']")
-    private WebElement txtPassword;
-
-    @FindBy(how = How.XPATH, using = "//input[@name='confirmPassword']")
-    private WebElement txtConfirmPass;
-
-    @FindBy(how = How.XPATH, using = "//span[@class='checkmark signup-consent__checkbox error']")
-    private WebElement checkConsent;
-
-    @FindBy(how = How.XPATH, using = "//div/a[@aria-label='Complete Setup']")
-    private WebElement btnNext4;
+    public static final Target BOTON_FINAL = Target.the("Complete Setup")
+            .locatedBy("//div/a[@aria-label='Complete Setup']");
 
 }
 

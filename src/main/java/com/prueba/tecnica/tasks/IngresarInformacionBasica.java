@@ -24,8 +24,6 @@ public class IngresarInformacionBasica implements Task {
     private String fechaMes;
     private String fechaAnio;
 
-    private Target JOIN_TODAY;
-
     public IngresarInformacionBasica(String nombre, String apellido, String correo, String dia, String mes, String anio) {
         this.nombre = nombre;
         this.apellido = apellido;

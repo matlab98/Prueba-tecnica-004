@@ -2,9 +2,9 @@ package com.prueba.tecnica.features.step_definitions;
 
 import com.prueba.tecnica.model.busqueda.BuscarVuelos;
 import com.prueba.tecnica.model.busqueda.FechaDeSalida;
-import com.prueba.tecnica.tasks.IngresarInformacionBasica;
-import com.prueba.tecnica.tasks.Navegar;
+import com.prueba.tecnica.tasks.*;
 import cucumber.api.java.Before;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.When;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -39,11 +39,19 @@ public class CreateStepDefinition {
     theActorCalled("Hilder").attemptsTo(IngresarInformacionBasica.registerUser(nombre, apellido, correo, fechadenacimiento.substring(0,2), fechadenacimiento.substring(2,4), fechadenacimiento.substring(4) ));
     }
 
-    @Then("^ella deberia ver las siguientes opciones de clase de vuelo:$")
-    public void ellaDeberiaLasSiguientesOpcionesDeClaseDeVuelo(List<String> clasesDeVuelo) throws Throwable {
-       /* EnUnFrame.llamado("FrameAmadeus")
-                .entonces(theActorInTheSpotlight())
-                .espera(verQueCadaClaseDeVueloEstaEn(clasesDeVuelo));*/
+    @And("^se diligencia la georeferencia (.+), (.+) y (.+)$")
+    public void se_diligencia_la_georeferencia(String ciudad, String pais, String codigo) throws Throwable {
+theActorCalled("Hilder").attemptsTo(IngresarInformacionGeoreferencia.registerUser(ciudad, codigo, pais));
+    }
+
+    @And("^se diligencia los datos de dispositivos (.+), (.+), (.+), (.+), (.+) y (.+)$")
+    public void se_diligencia_la_georeferencia(String movil, String modeloMovil, String osMovil, String computadorOs, String versionPc, String lenguajePc) throws Throwable {
+theActorCalled("Hilder").attemptsTo(IngresarInformacionDispositivo.registerUser(movil, modeloMovil, osMovil, computadorOs, versionPc, lenguajePc));
+    }
+
+    @And("^se diligencia clave (.+)$")
+    public void se_diligencia_clave(String clave) throws Throwable {
+theActorCalled("Hilder").attemptsTo(IngresarClaves.registerUser(clave));
     }
 
 

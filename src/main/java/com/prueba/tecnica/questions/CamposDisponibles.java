@@ -10,11 +10,11 @@ import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 import static net.serenitybdd.screenplay.questions.WebElementQuestion.the;
 
-public class ClasesDeVueloDisponibles {
+public class CamposDisponibles {
 
 
 
-    private static String mensajeDeErrorParaClaseDeVueloFaltante(String clase) {
-        return MessageFormat.format("La clase {0} no fue encontrada", clase);
+    private static String mensajeDeErrorParaCampoFaltante(String clase) {
+        return MessageFormat.format("El campo {0} no fue encontrada", clase);
     }
 }

@@ -17,36 +17,29 @@ import java.time.LocalDate;
 
 public class IngresarInformacionDispositivo implements Task {
 
-    private String nombre;
-    private String apellido;
-    private String correo;
-    private String fechaDia;
-    private String fechaMes;
-    private String fechaAnio;
+    private String  movil, modeloMovil, osMovil, computadorOs, versionPc, lenguajePc;
 
-    private Target JOIN_TODAY;
-
-    public IngresarInformacionDispositivo(String nombre, String apellido, String correo, String dia, String mes, String anio) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.correo = correo;
-        this.fechaDia = dia;
-        this.fechaMes = mes;
-        this.fechaAnio = anio;
+    public IngresarInformacionDispositivo(String movil, String modeloMovil, String osMovil, String computadorOs, String versionPc, String lenguajePc) {
+        this.movil = movil;
+        this.modeloMovil = modeloMovil;
+        this.osMovil = osMovil;
+        this.computadorOs = computadorOs;
+        this.versionPc = versionPc;
+        this.lenguajePc = lenguajePc;
     }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        actor.attemptsTo(Click.on(RegisterUI.JOIN_TODAY));
-        actor.attemptsTo(Enter.theValue(nombre).into(RegisterUI.FIRST_NAME));
-        actor.attemptsTo(Enter.theValue(apellido).into(RegisterUI.LAST_NAME));
-        actor.attemptsTo(Enter.theValue(correo).into(RegisterUI.EMAIL));
-        actor.attemptsTo(SelectFromOptions.byVisibleText(fechaDia).from(RegisterUI.FECHA_DIA));
-        actor.attemptsTo(SelectFromOptions.byIndex(Integer.valueOf(fechaMes)).from(RegisterUI.FECHA_MES));
-        actor.attemptsTo(SelectFromOptions.byVisibleText(fechaAnio).from(RegisterUI.FECHA_ANIO));
+        actor.attemptsTo(Click.on(RegisterUI.BOTON_SIGUIENTE_2));
+        actor.attemptsTo(SelectFromOptions.byVisibleText(movil).from(RegisterUI.FECHA_DIA));
+        actor.attemptsTo(SelectFromOptions.byVisibleText(modeloMovil).from(RegisterUI.FECHA_DIA));
+        actor.attemptsTo(SelectFromOptions.byVisibleText(osMovil).from(RegisterUI.FECHA_DIA));
+        actor.attemptsTo(SelectFromOptions.byVisibleText(computadorOs ).from(RegisterUI.FECHA_DIA));
+        actor.attemptsTo(SelectFromOptions.byVisibleText(versionPc).from(RegisterUI.FECHA_DIA));
+        actor.attemptsTo(SelectFromOptions.byVisibleText(lenguajePc).from(RegisterUI.FECHA_ANIO));
     }
 
-    public static Performable registerUser (String nombre, String apellido, String correo, String dia, String mes, String anio) {
-        return instrumented(IngresarInformacionDispositivo.class, nombre, apellido, correo, dia, mes, anio);
+    public static Performable registerUser (String movil, String modeloMovil, String osMovil, String computadorOs, String versionPc, String lenguajePc) {
+        return instrumented(IngresarInformacionDispositivo.class, movil, modeloMovil, osMovil, computadorOs, versionPc, lenguajePc);
     }
 }
