@@ -1,8 +1,6 @@
-# serenity-cucumber-gradle-screenplay
-Un proyecto donde se ejemplifica el uso del patrón serenity 
-[screenplay](http://thucydides.info/docs/serenity-staging/#_serenity_and_the_screenplay_pattern) con cucumber y gradle.
+## Un proyecto donde se ejemplifica el uso del patrón serenity screenplay con cucumber y gradle.
 
-Las pruebas de este ejemplo se corren contra la página web de [Avianca](https://www.avianca.com/co/es/).
+Las pruebas de este ejemplo se corren contra la página web de [Sahitest](http://sahitest.com/demo/training/login.htm).
 
 Por defecto, los tests corren en Chrome, así que es necesario tener instalada la última versión del chrome driver y 
 tenerla agregada como una variable en el path del sistema.
